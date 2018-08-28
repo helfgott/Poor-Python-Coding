@@ -1,2 +1,3 @@
 # Poor-Python-Coding
-I'm probably the worst python developer ever, anyway I must document every solution somewhere.
+
+My special ability is to find pieces of code and glue them together to achieve a solution for particular problems.

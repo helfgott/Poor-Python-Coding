@@ -1,6 +1,10 @@
 #!/usr/bin/python
 # miguel.ortiz
-# updates notebooks
+# This script update and install custom deb packages and it requires:
+#   - file "availables in webserver with the output of md5sum"
+#   - file "package.deb"
+#   - file "package.ver" (a text file with the version of the deb package) 
+#                       my main server was SuSe and I cound't verify the version using dpkg :(
 
 import urllib2, subprocess, time 
 import logging, sys, os

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 while True :
-   print 'script 1'
+   print ('script 1')

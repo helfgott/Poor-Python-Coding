@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>app Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+      .container {
+        max-width:1500px;
+        padding-top: 10px;
+      }
+      h2 {color: #135cae;}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+	    <h2>app desplegadas por servidor</h2>
+	    	<pre>Los nodos cuentan con un cliente que envia actualizaci&oacute;n cada 5 minutos |  Docs: 
+		</pre>
+		<table class="table table-sm">
+		  <thead>
+		    <tr>
+		      <th scope="col">#</th>
+		      <th scope="col">Server</th>
+		      <th scope="col">Timezone</th>
+		      <th scope="col">Applications</th>
+		      <th scope="col">Date when found</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		      <br>
+			{% block content %}
+			   {% for n in foundapp %}
+			    <tr>
+			      <th scope="row">{{ loop.index }}</th>
+			      <td>{{ n['server'] }}</td>
+			      <td>{{ n['timezone'] }}</td>
+			      <td>
+				       {% for key, value in n['applications'].items() %} 
+				            <li>{{ key }} {{ value }}</li>
+				        {% endfor %}	
+			      </td>	
+			      <!--<td>{{ n['applications'] }}</td>-->
+			      <td>{{ n['date'] }}</td>
+			    </tr>
+		         {% endfor %}
+			{% endblock %}
+			  </tbody>
+		</table>
+      <br>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
+

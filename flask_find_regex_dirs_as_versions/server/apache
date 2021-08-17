@@ -1,0 +1,18 @@
+<VirtualHost *:80>
+     # Add machine's IP address (use ifconfig command)
+     ServerName gsd.company
+     # Give an alias to to start your website url with
+     WSGIScriptAlias /devops /opt/devops/gsd/gsd.wsgi
+     <Directory /opt/devops/gsd/>
+                # set permissions as per apache2.conf file
+            Options FollowSymLinks
+            AllowOverride None
+            Require all granted
+     </Directory>
+     ErrorLog ${APACHE_LOG_DIR}/devops-error.log
+     LogLevel info
+     CustomLog ${APACHE_LOG_DIR}/devops-access.log combined
+</VirtualHost>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+
